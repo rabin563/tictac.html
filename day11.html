@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Run JS in HTML</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<script>
+// var car = {"name":"honda","model":2024,"year":2034}
+// console.log(car);
+// console.log(car["name"]);
+
+// var car1 = {a:"Rabin Dahal",b:2002,c:{inside:["1","2","3","4"]}};
+// console.log(car1);
+
+var employee = {
+    name: "john smith",
+    job: "programmer",
+    age: 31,
+    employeemethod: function() {
+        alert("the name is" +this.name +this.job);
+    }
+};
+console.log(employee);
+
+var employee = {
+    name: "john smith",
+    job: "programmer",
+    age: 31,
+};
+console.log(employee['name']);
+
+var employee = {
+    name: "john smith",
+    job: "programmer",
+    age: 31,
+    length: function() {
+        console.log(this.name.length);
+    }
+}
+</script>
+</body>
+</html>

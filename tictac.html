@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Events</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 150px;
+            height: 150px;
+            border: 5px solid black;
+            text-align: center;
+            font-size: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+     <div class="jumbotron">
+         <h1>Welcome to Tic Tac Toe Game!</h1>  
+         <p>Get ready to play!</p>
+         <button type="button" id="b" class="btn btn-primary btn-lg">Restart</button>
+     </div>
+     <table class="mx-auto">
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+     </table>
+   </div>
+
+<script>
+    var restart = document.querySelector("#b");
+    var squares = document.querySelectorAll('td');
+
+    // Restart button clears the board
+    function clearBoard() {
+        squares.forEach(cell => cell.textContent = '');
+    }
+    restart.addEventListener('click', clearBoard);
+
+    // Make all cells clickable & cycle X → O → empty
+    squares.forEach(function(cell) {
+        cell.addEventListener('click', function() {
+            if (cell.textContent === '') {
+                cell.textContent = 'X';
+            } else if (cell.textContent === 'X') {
+                cell.textContent = 'O';
+            } else {
+                cell.textContent = '';
+            }
+        });
+    });
+</script>
+</body>
+</html>
